@@ -82,30 +82,29 @@ WSGI_APPLICATION = 'django_school.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-#DATABASES = {
+DATABASES = {
      #'default': {
      #    'ENGINE': 'django.db.backends.sqlite3',
      #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
      #}
-    #'default': {
-    #    'ENGINE': 'django.db.backends.mysql',
-    #    'OPTIONS': {
-    #        #'read_default_file': 'django_school/mariadb.cnf',
-    #        'read_default_file': 'web_project/django_school/mariadb.cnf',
-    #    },
-    #}
-#}
-
-DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'uca_quiz',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'django_database',
-        'PORT': '3306',
+        'OPTIONS': {
+            'read_default_file': 'django_school/mariadb.cnf',
+        },
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'uca_quiz',
+#        'USER': 'root',
+#        'PASSWORD': 'root',
+#        'HOST': 'django_database',
+#        'PORT': '3306',
+#    }
+#}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
