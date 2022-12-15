@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-school-db
+  labels:
+    app: mysql-app
+spec:
+  selector:
+    matchLabels:
+      app: mysql-app
+  template:
+    metadata:
+      labels:
+        app: mysql-app
+    spec:
+      containers:
+      - name: mysql-app
+        image: vsp2202223/mysql
+        ports:
+        - containerPort: 3306
